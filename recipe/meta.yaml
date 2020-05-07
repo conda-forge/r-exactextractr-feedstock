@@ -1,4 +1,4 @@
-{% set version = '0.2.1' %}
+{% set version = "0.3.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/exactextractr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/exactextractr/exactextractr_{{ version }}.tar.gz
-  sha256: d0b998c77c3fd9265a600a0e08e9bf32a2490a06c19df0d0c0dea4b5c9ab5773
+  sha256: c7fb38b38b9dc8b3ca5b8f1f84f4ba3256efd331f2b4636b496d42689ffc3fb0
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -57,8 +57,7 @@ test:
 about:
   home: https://isciences.gitlab.io/exactextractr/, https://github.com/isciences/exactextractr
   license: Apache-2.0
-  summary: Provides a replacement for the 'extract' function from the 'raster' package that is
-    suitable for extracting raster values using 'sf' polygons.
+  summary: Provides a replacement for the 'extract' function from the 'raster' package that is suitable for extracting raster values using 'sf' polygons.
   license_family: APACHE
   license_file: src/exactextract/LICENSE
 
