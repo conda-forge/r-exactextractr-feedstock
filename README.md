@@ -90,6 +90,7 @@ Installing `r-exactextractr` from the `conda-forge` channel can be achieved by a
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `r-exactextractr` can be installed with:
