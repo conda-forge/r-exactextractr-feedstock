@@ -1,4 +1,4 @@
-{% set version = "0.8.1" %}
+{% set version = "0.8.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/exactextractr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/exactextractr/exactextractr_{{ version }}.tar.gz
-  sha256: cc26f47509c73491fde0cb3f7badb4d58a0e168c28a812105433e561d8464587
+  sha256: cc32ab3af8d881a7e7836c296ea42f3fdabf3373ec1de0b154dbfe9870ee8a74
 
 build:
   merge_build_host: true  # [win]
