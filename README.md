@@ -1,11 +1,11 @@
-About r-exactextractr
-=====================
+About r-exactextractr-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-exactextractr-feedstock/blob/main/LICENSE.txt)
 
 Home: https://isciences.gitlab.io/exactextractr/, https://github.com/isciences/exactextractr
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-exactextractr-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provides a replacement for the 'extract' function from the 'raster' package that is suitable for extracting raster values using 'sf' polygons.
 
