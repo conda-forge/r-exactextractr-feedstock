@@ -17,6 +17,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -45,13 +49,13 @@ requirements:
     - r-base
     - r-rcpp >=0.12.12
     - r-raster
-    - r-sf
+    - r-sf >=0.9.0
   run:
     - geos
     - r-base
     - r-rcpp >=0.12.12
     - r-raster
-    - r-sf
+    - r-sf >=0.9.0
 
 test:
   commands:
@@ -63,7 +67,8 @@ about:
   license: Apache-2.0
   summary: Provides a replacement for the 'extract' function from the 'raster' package that is suitable for extracting raster values using 'sf' polygons.
   license_family: APACHE
-  license_file: src/exactextract/LICENSE
+  license_file:
+    - src/exactextract/LICENSE
 
 extra:
   recipe-maintainers:
