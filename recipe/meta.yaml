@@ -1,4 +1,4 @@
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,14 +9,18 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/exactextractr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/exactextractr/exactextractr_{{ version }}.tar.gz
-  sha256: 9b7fc3c6f0e9e89596a1992240ecbb8e2893f4addffaecbd852403c10a0943de
+  sha256: 451f91f4e487c180bfa7ca38c8da129c086057b1761277ba03c090f70745a5ce
 
 build:
   skip: true  # [win]
-  number: 4
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -45,13 +49,13 @@ requirements:
     - r-base
     - r-rcpp >=0.12.12
     - r-raster
-    - r-sf
+    - r-sf >=0.9.0
   run:
     - geos
     - r-base
     - r-rcpp >=0.12.12
     - r-raster
-    - r-sf
+    - r-sf >=0.9.0
 
 test:
   commands:
@@ -63,7 +67,8 @@ about:
   license: Apache-2.0
   summary: Provides a replacement for the 'extract' function from the 'raster' package that is suitable for extracting raster values using 'sf' polygons.
   license_family: APACHE
-  license_file: src/exactextract/LICENSE
+  license_file:
+    - src/exactextract/LICENSE
 
 extra:
   recipe-maintainers:
